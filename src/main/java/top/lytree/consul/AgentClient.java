@@ -6,6 +6,8 @@ import top.lytree.consul.config.ClientConfig;
 import top.lytree.consul.model.ConsulResponse;
 import top.lytree.consul.model.State;
 import top.lytree.consul.model.agent.*;
+import top.lytree.consul.model.agent.ImmutableCheck;
+import top.lytree.consul.model.agent.ImmutableRegistration;
 import top.lytree.consul.model.health.HealthCheck;
 import top.lytree.consul.model.health.Service;
 import top.lytree.consul.monitoring.ClientEventCallback;

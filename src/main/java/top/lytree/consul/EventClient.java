@@ -43,23 +43,23 @@ public class EventClient extends BaseClient {
 
     /**
      * Fires a Consul event.
-     *
+     * <p>
      * PUT /v1/event/fire/{name}
      *
-     * @param name The name of the event.
+     * @param name         The name of the event.
      * @param eventOptions The event specific options to use.
-     * @param payload Optional string payload.
+     * @param payload      Optional string payload.
      * @return The newly created {@link top.lytree.consul.model.event.Event}.
      */
     public Event fireEvent(String name, EventOptions eventOptions, String payload) {
         return http.extract(api.fireEvent(name,
-                RequestBody.create(MediaType.parse("text/plain"), payload),
+                RequestBody.create(payload, MediaType.parse("text/plain")),
                 eventOptions.toQuery()));
     }
 
     /**
      * Fires a Consul event.
-     *
+     * <p>
      * PUT /v1/event/fire/{name}
      *
      * @param name The name of the event.
@@ -71,10 +71,10 @@ public class EventClient extends BaseClient {
 
     /**
      * Fires a Consul event.
-     *
+     * <p>
      * PUT /v1/event/fire/{name}
      *
-     * @param name The name of the event.
+     * @param name         The name of the event.
      * @param eventOptions The event specific options to use.
      * @return The newly created {@link top.lytree.consul.model.event.Event}.
      */
@@ -84,10 +84,10 @@ public class EventClient extends BaseClient {
 
     /**
      * Fires a Consul event.
-     *
+     * <p>
      * PUT /v1/event/fire/{name}
      *
-     * @param name The name of the event.
+     * @param name    The name of the event.
      * @param payload Optional string payload.
      * @return The newly created {@link top.lytree.consul.model.event.Event}.
      */
@@ -97,13 +97,13 @@ public class EventClient extends BaseClient {
 
     /**
      * Lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list?name={name}
      *
-     * @param name Event name to filter.
+     * @param name         Event name to filter.
      * @param queryOptions The query options to use.
      * @return A {@link top.lytree.consul.model.ConsulResponse} object containing
-     *  a list of {@link top.lytree.consul.model.event.Event} objects.
+     * a list of {@link top.lytree.consul.model.event.Event} objects.
      */
     public EventResponse listEvents(String name, QueryOptions queryOptions) {
         final Map<String, Object> query = queryOptions.toQuery();
@@ -117,12 +117,12 @@ public class EventClient extends BaseClient {
 
     /**
      * Lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list?name={name}
      *
      * @param name Event name to filter.
      * @return A {@link top.lytree.consul.model.ConsulResponse} object containing
-     *  a list of {@link top.lytree.consul.model.event.Event} objects.
+     * a list of {@link top.lytree.consul.model.event.Event} objects.
      */
     public EventResponse listEvents(String name) {
         return listEvents(name, QueryOptions.BLANK);
@@ -130,12 +130,12 @@ public class EventClient extends BaseClient {
 
     /**
      * Lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list
      *
      * @param queryOptions The query options to use.
      * @return A {@link top.lytree.consul.model.ConsulResponse} object containing
-     *  a list of {@link top.lytree.consul.model.event.Event} objects.
+     * a list of {@link top.lytree.consul.model.event.Event} objects.
      */
     public EventResponse listEvents(QueryOptions queryOptions) {
         return listEvents(null, queryOptions);
@@ -143,11 +143,11 @@ public class EventClient extends BaseClient {
 
     /**
      * Lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list
      *
      * @return A {@link top.lytree.consul.model.ConsulResponse} object containing
-     *  a list of {@link top.lytree.consul.model.event.Event} objects.
+     * a list of {@link top.lytree.consul.model.event.Event} objects.
      */
     public EventResponse listEvents() {
         return listEvents(null, QueryOptions.BLANK);
@@ -155,12 +155,12 @@ public class EventClient extends BaseClient {
 
     /**
      * Asynchronously lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list?name={name}
      *
-     * @param name Event name to filter.
+     * @param name         Event name to filter.
      * @param queryOptions The query options to use.
-     * @param callback The callback to asynchronously process the result.
+     * @param callback     The callback to asynchronously process the result.
      */
     public void listEvents(String name, QueryOptions queryOptions, EventResponseCallback callback) {
         final Map<String, Object> query = queryOptions.toQuery();
@@ -187,11 +187,11 @@ public class EventClient extends BaseClient {
 
     /**
      * Asynchronously lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list
      *
      * @param queryOptions The query options to use.
-     * @param callback The callback to asynchronously process the result.
+     * @param callback     The callback to asynchronously process the result.
      */
     public void listEvents(QueryOptions queryOptions, EventResponseCallback callback) {
         listEvents(null, queryOptions, callback);
@@ -199,7 +199,7 @@ public class EventClient extends BaseClient {
 
     /**
      * Asynchronously lists events for the Consul agent.
-     *
+     * <p>
      * GET /v1/event/list
      *
      * @param callback The callback to asynchronously process the result.
@@ -207,6 +207,7 @@ public class EventClient extends BaseClient {
     public void listEvents(EventResponseCallback callback) {
         listEvents(null, QueryOptions.BLANK, callback);
     }
+
     /**
      * Retrofit API interface.
      */

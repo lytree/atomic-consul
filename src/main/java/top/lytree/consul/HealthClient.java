@@ -26,7 +26,7 @@ import java.util.Map;
  */
 public class HealthClient extends BaseCacheableClient {
 
-    private static String CLIENT_NAME = "health";
+    private static final String CLIENT_NAME = "health";
 
     private final Api api;
 
@@ -40,28 +40,28 @@ public class HealthClient extends BaseCacheableClient {
         this.api = retrofit.create(Api.class);
     }
 
-    /**
-     * Retrieves the healthchecks for a node.
+/**
+     * 检索节点的运行状况检查。
      * <p/>
-     * GET /v1/health/node/{node}
+     * 获取 /v1/health/node/{node}
      *
-     * @param node The node to return checks for
-     * @return A {@link top.lytree.consul.model.ConsulResponse} containing a list of
-     * {@link top.lytree.consul.model.health.HealthCheck} objects.
+     * @param节点 返回检查的节点
+     * @return 包含以下列表的 {@link top.lytree.consul.model.ConsulResponse}
+     * {@link top.lytree.consul.model.health.HealthCheck} 对象。
      */
     public ConsulResponse<List<HealthCheck>> getNodeChecks(String node) {
         return getNodeChecks(node, QueryOptions.BLANK);
     }
 
-    /**
-     * Retrieves the healthchecks for a node in a given datacenter with {@link top.lytree.consul.option.QueryOptions}.
+/**
+     * 使用 {@link top.lytree.consul.option.QueryOptions} 检索给定数据中心中节点的运行状况检查。
      * <p/>
-     * GET /v1/health/node/{node}?dc={datacenter}
+     * GET /v1/health/node/{node}？dc={数据中心}
      *
-     * @param node         The node to return checks for
-     * @param queryOptions The Query Options to use.
-     * @return A {@link top.lytree.consul.model.ConsulResponse} containing a list of
-     * {@link top.lytree.consul.model.health.HealthCheck} objects.
+     * @param node 返回检查的节点
+     * @param queryOptions 要使用的查询选项。
+     * @return 包含以下列表的 {@link top.lytree.consul.model.ConsulResponse}
+     * {@link top.lytree.consul.model.health.HealthCheck} 对象。
      */
     public ConsulResponse<List<HealthCheck>> getNodeChecks(String node,
                                                            QueryOptions queryOptions) {
@@ -69,26 +69,26 @@ public class HealthClient extends BaseCacheableClient {
                 queryOptions.getTag(), queryOptions.getNodeMeta(), queryOptions.toHeaders()));
     }
 
-    /**
-     * Retrieves the healthchecks for a service.
+/**
+     * 检索服务的运行状况检查。
      * <p/>
-     * GET /v1/health/checks/{service}
+     * 获取 /v1/health/checks/{service}
      *
-     * @return A {@link top.lytree.consul.model.ConsulResponse} containing a list of
-     * {@link top.lytree.consul.model.health.HealthCheck} objects.
+     * @return 包含以下列表的 {@link top.lytree.consul.model.ConsulResponse}
+     * {@link top.lytree.consul.model.health.HealthCheck} 对象。
      */
     public ConsulResponse<List<HealthCheck>> getServiceChecks(String service) {
         return getServiceChecks(service, QueryOptions.BLANK);
     }
 
-    /**
-     * Retrieves the healthchecks for a service in a given datacenter with {@link top.lytree.consul.option.QueryOptions}.
+/**
+     * 使用 {@link top.lytree.consul.option.QueryOptions} 检索给定数据中心中服务的运行状况检查。
      * <p/>
-     * GET /v1/health/checks/{service}?dc={datacenter}
+     * GET /v1/health/checks/{service}？dc={数据中心}
      *
-     * @param queryOptions The Query Options to use.
-     * @return A {@link top.lytree.consul.model.ConsulResponse} containing a list of
-     * {@link top.lytree.consul.model.health.HealthCheck} objects.
+     * @param queryOptions 要使用的查询选项。
+     * @return 包含以下列表的 {@link top.lytree.consul.model.ConsulResponse}
+     * {@link top.lytree.consul.model.health.HealthCheck} 对象。
      */
     public ConsulResponse<List<HealthCheck>> getServiceChecks(String service,
                                                               QueryOptions queryOptions) {
