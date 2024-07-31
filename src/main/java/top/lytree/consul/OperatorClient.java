@@ -13,9 +13,12 @@ import retrofit2.http.QueryMap;
 
 import java.util.Map;
 
+/**
+ * 执行集群级别的任务，例如与 Raft 子系统交互或获取许可证信息。
+ */
 public class OperatorClient extends BaseClient {
 
-    private static String CLIENT_NAME = "operator";
+    private static final String CLIENT_NAME = "operator";
 
     private final Api api;
 

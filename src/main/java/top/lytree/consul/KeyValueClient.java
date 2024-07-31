@@ -48,6 +48,7 @@ import static top.lytree.consul.util.Strings.trimLeadingSlash;
 
 /**
  * HTTP Client for /v1/kv/ endpoints.
+ * 添加、删除和更新 Consul KV 存储中存储的元数据。
  */
 public class KeyValueClient extends BaseCacheableClient {
 

@@ -23,7 +23,7 @@ import java.util.Map;
 
 /**
  * HTTP Client for /v1/snapshot/ endpoints.
- *
+ * 在发生灾难时保存和恢复 Consul 服务器状态。
  * @see <a href="https://www.consul.io/api/snapshot.html">The Consul API Docs</a> for Snapshots
  */
 public class SnapshotClient extends BaseClient {

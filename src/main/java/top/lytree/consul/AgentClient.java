@@ -6,8 +6,6 @@ import top.lytree.consul.config.ClientConfig;
 import top.lytree.consul.model.ConsulResponse;
 import top.lytree.consul.model.State;
 import top.lytree.consul.model.agent.*;
-import top.lytree.consul.model.agent.ImmutableCheck;
-import top.lytree.consul.model.agent.ImmutableRegistration;
 import top.lytree.consul.model.health.HealthCheck;
 import top.lytree.consul.model.health.Service;
 import top.lytree.consul.monitoring.ClientEventCallback;
@@ -26,8 +24,8 @@ import java.util.Optional;
 
 /**
  * HTTP Client for /v1/agent/ endpoints.
- *
- * @see <a href="http://www.consul.io/docs/agent/http.html#agent">The Consul API Docs</a>
+ * 与服务网格中的本地代理进行交互。
+ * @see <a href="https://developer.hashicorp.com/consul/api-docs/agent">The Consul API Docs</a>
  */
 public class AgentClient extends BaseClient {
 

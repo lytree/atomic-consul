@@ -12,9 +12,13 @@ import retrofit2.http.*;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 创建和管理令牌，用于对请求进行身份验证并授权访问网络中的资源。
+ * 我们建议启用访问控制列表 （ACL） 以保护对 Consul API、UI 和 CLI 的访问。
+ */
 public class AclClient extends BaseClient {
 
-    private static String CLIENT_NAME = "acl";
+    private static final String CLIENT_NAME = "acl";
 
     private final Api api;
 

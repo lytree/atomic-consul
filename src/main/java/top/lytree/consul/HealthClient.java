@@ -23,6 +23,7 @@ import java.util.Map;
 
 /**
  * HTTP Client for /v1/health/ endpoints.
+ * 启用健康检查时查询节点运行状况。
  */
 public class HealthClient extends BaseCacheableClient {
 

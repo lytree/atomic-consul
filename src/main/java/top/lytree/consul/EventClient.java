@@ -22,8 +22,8 @@ import java.util.Map;
 
 /**
  * HTTP Client for /v1/event/ endpoints.
- *
- * @see <a href="http://www.consul.io/docs/agent/http.html#event">The Consul API Docs</a>
+ * 启动可用于构建脚本和自动化的自定义事件。
+ * @see <a href="https://developer.hashicorp.com/consul/api-docs/event">The Consul API Docs</a>
  */
 public class EventClient extends BaseClient {
 

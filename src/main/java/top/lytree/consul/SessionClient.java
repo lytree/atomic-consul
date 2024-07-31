@@ -17,8 +17,8 @@ import java.util.Optional;
 
 /**
  * HTTP Client for /v1/session/ endpoints.
+ * 在 Consul 中创建和管理会话。您可以使用会话来构建分布式锁和粒度锁，以确保节点正确写入 Consul KV 存储。
  *
- * @see <a href="http://www.consul.io/docs/agent/http.html#session">The Consul API Docs</a>
  */
 public class SessionClient extends BaseClient {
 

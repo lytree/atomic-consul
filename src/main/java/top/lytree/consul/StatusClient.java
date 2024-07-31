@@ -11,6 +11,9 @@ import retrofit2.http.QueryMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 通过返回有关 Consul 服务器对等体的低级 Raft 信息来调试 Consul 数据中心。
+ */
 public class StatusClient extends BaseClient {
 
     private static String CLIENT_NAME = "status";

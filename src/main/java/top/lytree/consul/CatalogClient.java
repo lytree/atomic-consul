@@ -19,6 +19,7 @@ import java.util.Map;
 
 /**
  * HTTP Client for /v1/catalog/ endpoints.
+ * 注册和注销节点、服务和运行状况检查。
  */
 public class CatalogClient extends BaseCacheableClient {
 

@@ -16,8 +16,8 @@ import java.util.Map;
 
 /**
  * HTTP Client for /v1/coordinate/ endpoints.
- *
- * @see <a href="http://www.consul.io/docs/agent/http.html#agent">The Consul API Docs</a>
+ * 查询本地数据中心节点的网络坐标，以及本地数据中心和远端数据中心的Consul服务器的网络坐标。
+ * @see <a href="https://developer.hashicorp.com/consul/api-docs/coordinate">The Consul API Docs</a>
  */
 public class CoordinateClient extends BaseClient {
 
