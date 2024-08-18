@@ -16,7 +16,7 @@ import java.util.Map;
  */
 public class StatusClient extends BaseClient {
 
-    private static String CLIENT_NAME = "status";
+    private static final String CLIENT_NAME = "status";
 
     private final Api api;
 
@@ -32,7 +32,7 @@ public class StatusClient extends BaseClient {
 
     /**
      * Retrieves the host/port of the Consul leader.
-     *
+     * <p>
      * GET /v1/status/leader
      *
      * @return The host/port of the leader.

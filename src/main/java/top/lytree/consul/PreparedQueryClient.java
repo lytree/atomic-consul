@@ -135,6 +135,25 @@ public class PreparedQueryClient extends BaseClient {
     }
 
     /**
+     * Deletes a prepared query by its ID.
+     *
+     * @param id The query ID
+     */
+    public void deletePreparedQuery(String id) {
+        deletePreparedQuery(id, null);
+    }
+
+    /**
+     * Deletes a prepared query by its ID.
+     *
+     * @param id The query ID
+     * @param dc The data center
+     */
+    public void deletePreparedQuery(String id, String dc) {
+        http.extract(api.deletePreparedQuery(id, dcQuery(dc)));
+    }
+
+    /**
      * Retrofit API interface.
      */
     interface Api {
@@ -153,5 +172,9 @@ public class PreparedQueryClient extends BaseClient {
         @GET("query/{nameOrId}/execute")
         Call<QueryResults> execute(@Path("nameOrId") String nameOrId,
                                    @QueryMap Map<String, Object> queryMap);
+
+        @DELETE("query/{id}")
+        Call<Void> deletePreparedQuery(@Path("id") String id,
+                                       @QueryMap Map<String, String> queryMap);
     }
 }

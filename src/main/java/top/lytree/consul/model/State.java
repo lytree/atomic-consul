@@ -5,7 +5,11 @@ package top.lytree.consul.model;
  */
 public enum State {
 
-    PASS("pass", "passing"), WARN("warn", "warning"), FAIL("fail", "critical"), ANY("any", "any"),
+    PASS("pass", "passing"),
+    WARN("warn", "warning"),
+    FAIL("fail", "critical"),
+    UPDATE("update", "update"),
+    ANY("any", "any"),
     UNKNOWN("unknown", "unknown");
 
     private final String path;
@@ -46,8 +50,8 @@ public enum State {
      * @return The state.
      */
     public static State fromName(String name) {
-        for(State state : values()) {
-            if(state.getName().equals(name)) {
+        for (State state : values()) {
+            if (state.getName().equals(name)) {
                 return state;
             }
         }

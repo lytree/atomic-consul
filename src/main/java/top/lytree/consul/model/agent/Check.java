@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.util.Optional;
+
 import com.google.common.collect.ImmutableList;
 import org.immutables.value.Value;
 
@@ -18,7 +20,7 @@ import static com.google.common.base.Preconditions.checkState;
 @JsonDeserialize(as = ImmutableCheck.class)
 public abstract class Check {
 
-    @JsonProperty("ID")
+    @JsonProperty("CheckID")
     public abstract String getId();
 
     @JsonProperty("Name")
@@ -65,7 +67,7 @@ public abstract class Check {
     protected void validate() {
 
         checkState(getHttp().isPresent() || getTtl().isPresent()
-            || getArgs().isPresent() || getTcp().isPresent() || getGrpc().isPresent(),
+                        || getArgs().isPresent() || getTcp().isPresent() || getGrpc().isPresent(),
                 "Check must specify either http, tcp, ttl, grpc or args");
 
         if (getHttp().isPresent() || getArgs().isPresent() || getTcp().isPresent() || getGrpc().isPresent()) {

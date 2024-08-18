@@ -22,19 +22,33 @@ public abstract class QueryOptions implements ParamAdder {
     public static final QueryOptions BLANK = ImmutableQueryOptions.builder().build();
 
     public abstract Optional<String> getWait();
+
     public abstract Optional<String> getToken();
+
     public abstract Optional<String> getHash();
+
     public abstract Optional<BigInteger> getIndex();
+
     public abstract Optional<String> getNear();
+
     public abstract Optional<String> getDatacenter();
+
     public abstract Optional<String> getFilter();
+
     public abstract Optional<String> getNamespace();
+
     public abstract Optional<Boolean> getWan();
+
     public abstract Optional<String> getSegment();
+
     public abstract Optional<String> getNote();
+
     public abstract Optional<Boolean> getEnable();
+
     public abstract Optional<String> getReason();
+
     public abstract List<String> getNodeMeta();
+
     public abstract List<String> getTag();
 
     @Value.Default
